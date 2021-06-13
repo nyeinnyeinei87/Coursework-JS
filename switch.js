@@ -1,3 +1,4 @@
+// switch homework
 let country = prompt("Enter a country:singapore or other country");
 switch (country) {
     case 'singapore':
