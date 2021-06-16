@@ -1,0 +1,48 @@
+// Testing about radio button & replace ()
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>li{display: block}</style>
+</head>
+<body>
+<br><b> Choose your Marital Status: </b><br>
+<ol id="maritalStatus">
+    <p>How about?</p>
+<li><input type="radio" name="status" id="single" value="Single"> Single</li> <br> 
+<li><input type="radio" name="status" id="married" value="Married"> Married</li> <br> 
+<li><input type="radio" name="status" id="doNotShare" value="DoNotShare"> DoNotShare </li><br>
+</ol>
+<br><br>     
+
+<button type="button" onclick=" checkButton()"> Submit </button> 
+
+<h3 id="disp" style= "color:green"> </h3>
+<h4 id="error" style= "color:red"> </h4>
+
+
+<script>
+
+    function checkButton() {  
+
+            var getSelectedValue = document.querySelector('input[name="status"]:checked'); 
+            
+
+            if(getSelectedValue != null) { 
+               document.getElementById("disp").innerHTML 
+                             = "I'm "+ getSelectedValue.value + "  !";
+                
+            } 
+            else { 
+                document.getElementById("error").innerHTML 
+                    = "*You have not selected any season"; 
+            }
+            var str = document.getElementById("maritalStatus").innerHTML; 
+            var res = str.replace("How about?", "Really! Thanks your answer");
+            document.getElementById("maritalStatus").innerHTML = res;   
+        }  
+    </script> 
+</body>
+</html>
